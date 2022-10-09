@@ -260,3 +260,32 @@ SSH key pair (private + public keys)
 Allow port 22 in firewall rule for restricted IP addresses
 ssh-keygen -t rsa
 scp = securely copy files and dir (encrypted)
+
+
+extra learnings:
+
+grep "string1\|string2"
+finds a line in the output that has "string1" or "string2" in it
+
+awk '{print substr($3,2,2)}
+takes a line and grabs the third section of the string and from there grabs the first 2 characters
+
+echo -n 
+message to tell echo not to append a newline
+
+read
+bash builtin command that reads the contents of a line into a variable
+
+head
+used to print the first ten lines (by default) or any other amount specified of a file or files
+
+mkdir -p
+create sub-directories of a directory. It will create parent directory first, if it doesn't exist
+But if it already exists, then it will not print an error message and will move further to create sub-directories
+
+grep -v
+matches only those lines that do not contain the given word
+
+runuser 
+changes the user that runs a command
+only the root user can call runuser
