@@ -1,0 +1,56 @@
+DATABASES
+
+persist data
+
+setup options:
+- each dev installs DB locally
+- DB hosted remotely
+- ideally both
+
+config setup for DB connection: endpoint & credentials (define as env vars in config files)
+
+DevOps roles:
+regular backups
+replicate
+restore
+
+
+DB Types:
+
+- Key Value
+Redis
+very fast but limited storage
+used for caching, message queue
+
+- Wide Column (multiple columns per key)
+Cassandra, Apache
+scalable but no joins
+used for time-series, IoT records, historical events
+
+- Document (containers for key value pairs)
+MonogDB, DynamoDB
+slower writes but faster to read
+used for mobile apps, game apps
+
+- Relational
+MySQL, Postgres
+store structured data
+schema and data types needed to start
+data organised into tables with rows & columns
+normalised to avoid duplication
+ACID: atomicity, consistency, isolation, durability
+difficult to scale
+
+- Graph
+Neo4j
+reduce complexity of connections
+best for graphs, patterns, recommendations
+
+- Search
+ElasticSearch, Solar
+creates index of words that is searched only
+
+can combine multiple DB types together depending on App needs
+
+
+
