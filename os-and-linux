@@ -1,0 +1,262 @@
+OS & LINUX
+
+Operating system (OS)  = middleman between apps and hardware 
+Serves several roles: 
+Translator
+Manages resources among apps (CPU/process, memory, storage, file system, I/O devices eg. mouse, security through users & permissions, networking)
+Isolates contents of apps
+
+OS components:
+Kernel (layer between apps & hardware), which is a program made up of drivers & logic
+App layer 
+
+Client OS vs Server OS (No GUI or I/O Devices so more lightweight)
+
+Virtualization & Virtual Machines
+Hypervisor to run multiple virtual machines using a physical Host OS
+Most popular hypervisor is VirtualBox 
+VMs are isolated
+Type 2 vs Type 1 Hypervisor: Type 1 installed directly on hardware for servers, Type 2 uses host OS on personal computer
+Benefits Type 2: learn & experiment, don’t endanger main OS, test app on different OS
+Benefits Type 1: efficient usage of hardware resources, abstraction of OS from hardware via VMI (Virtual Machine Image) with backups/snaphots
+
+Linux File System
+Everything in Linux is a file
+1 root folder / root user home dir
+/home dir of non-root users
+/bin executables for essential system cmd
+/sbin system binaries, need super user privileges to execute
+/lib shared lib that execs from /bin or /sbin use 
+/usr was used for user home dir (histroic reasons due to storage limitations)
+/usr/local programs that YOU install on computer (3rd party apps) available for all users 
+/opt 3rd party programs you install that DONT split its components
+/boot files required for booting
+/etc system config 
+/dev device files (webcam, mouse, keyboard etc) 
+/var stores logs
+/var/cache 
+/tmp temporary resources required for processes
+/media removable media 
+/mnt temporary mount points
+Hidden files (starts with a dot)
+
+Linux cmd
+username@hostname:~$  
+($ regular user, # super user)
+
+pwd = show current dir
+ls = list contents
+cd = change dir (cd / = change to root dir)
+mkdir = make dir
+touch = create file
+rm = delete file
+rm -r  = delete non-empty dir with files in it
+rmdir = delete empty dir
+clear= clears terminal
+mv <old-name> <new-name> = rename file to new name
+cp -r <dir> <new-dir> = copy contents folder to new folder
+ls -R = list all folders and files in each
+history = lists all recent cmd in terminal
+ls -a = display hidden files
+ls -l = print files in long list format (ls -la for listing hidden files)
+cat = show contents file
+uname -a = show system & kernel
+cat /etc/os-release = show release version
+lscpu = cpu info
+lsmem = memory info
+sudo = grants super user privileges for cmd
+su - <username> = switch user
+|  = pipe, passes output of one cmd as input of next cmd
+<input> | less = displays reader friendly format for info in CLI
+<input> | grep <pattern> = filter input based on pattern search
+> = redirect, takes output from previous cmd and sends it to file that you give (overrides contents file)
+>> = appends text to end of file
+Can pass multiple cmd in one line separated by ;
+
+Package manager: APT
+Resolves dependencies for installing software
+Ensure integrity & authenticity of package
+Downloads, installs or updates existing software from repo
+Knows where to put all files in system
+
+apt search <package name>
+apt install <package name>
+apt remove <package name>
+apt update
+
+
+
+VIM text editor
+:wq  quit and save
+:q!  quit without saving 
+dd delete line
+d10d delete next 10 lines
+u undo
+A jump to end of line, switch insert mode
+$ jump to end line, without switch insert mode
+0 jump to beginning of line
+12G jump to line 12
+/pattern search for pattern
+  n jump to next match
+  N jump to previous match
+:%s/old/new replace old with new throughout file
+
+Users, Groups & Permissions
+3 user categories:
+Root user
+Regular user
+Service user (best practice for security)
+
+
+Can group users and define group permissions 
+Users can have multiple groups
+
+adduser <username>
+passwd <username> 
+su - <username>
+su -   switch root user
+groupadd <groupname>
+deluser <username>
+groupdel >groupname>
+usermod [OPTIONS] <username>
+usermod -g <groupname> <username>
+usermod -G <groupname> <username> (overrides secondary groups list)
+usermod -aG <groupname> <username> (appends to existing list)
+gpasswd -d <username> <groupname>
+groups <username> (lists users groups)
+exit (logout user)
+
+chown <username>:<groupname> <filename> (change file ownership)
+chgrp <groupname> <filename>
+
+Example permission info for file: drwxrwxr-x
+
+d directory
+-normal file
+
+(owner)
+r read
+w write
+x execute
+-No permission
+
+(group)
+r read
+w write
+x execute
+-No permission
+
+(other)
+r read
+w write
+x execute
+-No permission
+
+chmod -x <filename> (remove execute permissions for all owners)
+chmod g-w <filename> (remove write permissions for group)
+chmod g+x <filename> (add execute permissions for group)
+chmod u+x <filename> (add execute permission for user)
+chmod o+x <filename> (add execute permission for others)
+chmod g=rwx <filename> (sets specific block permissions for group)
+chmod 777 <filename> (gives all permission to all owners)
+
+Shell scripting 
+.sh file extension
+Bash (Bourne-again Shell): shell program
+Shebang: tells OS which shell program to use eg. #!/bin/bash
+
+Variables
+Declare variables: <variablename>=<value>
+Can insert cmd into variables using $() eg. files=$(ls files)
+Use variables: $<variablename>
+
+Conditionals: 
+if [condition]
+then
+  statement
+elif [condition]
+then
+  statement
+else
+  statement
+fi
+
+Operators
+File operators:
+Eg. -d <name> (tests if dir exists with that name)
+Num operators:
+Eg. <numbervalue> -eq <number> (checks equality)
+String operators:
+<value> == <value> (checks equality)
+
+Parameters
+Pass parameter from outside script = <variablename1>=$1 <variablename2>=$2
+Then reference in script exec cmd = <scriptname> <param1> <param2>
+Read user input = read -p <variableinputname>
+$* = lists all params provided
+$# = counts number params 
+
+Loops
+For loops: iterating over list
+for <el> in <list>
+  do
+done
+While loops: exec cmd repeatedly until condition matched
+while <condition>
+  do
+done
+break = cmd to exit loop
+$((<arithmetic operation>))
+
+
+Functions
+define  = function <functionname>() {
+  <param1>=$1
+  [logic $<param1>]
+  return <variablename>
+}
+execute = <functionname>
+$? = captures value returned by last cmd
+
+Comment out line = #
+
+Env variables
+Available for whole environment
+Defined upper case
+printenv = prints all env variables 
+printenv <ENV> = prints specific env var
+export <ENV>=<value> = define env var
+unset <ENV> = delete env var
+To persist env var for specific user, add them in .bashrc file, then run: source .bashrc
+For system wide env var definition, add to PATH variable (lists all file paths in which bin cmd get executed), located in /etc/environment 
+PATH=$PATH:<userhomedir> = access env var anywhere for specific user env without providing actual path each time
+
+Networking
+LAN: local area network
+IP: internet protocol (32 bit value; bit = 0 or 1)
+Switch: sits within LAN
+Router: sits between LAN and outside network (WAN)
+Gateway: IP address of Router
+Subnet: IP address range (uses subnet mask to fixate bits of IP address range)
+Eg. 255.255.0.0 means 16 bits are fixed, 255.255.255.0 means 24 bits are fixed)
+CIDR: Classless Inter-Domain Routing (shorthand for IP address range: 255.168.0.0/16 means 16 bits are fixed)
+NAT: Network Address Translation, private IP address of device within LAN is replaced by router
+(security and reusability of IP addresses)
+Firewall: prevent unauthorized access from entering private network using firewall rules, allows device IP address at port to be accessed (port forwarding)
+Port: every device has set of ports (doors through which can access)
+DNS Domain Name Service: mapping IP addresses to names
+Every device has DNS clients to perform mapping
+Domains & subdomains
+Useful cmd:
+Ifconfig: get computer networking info
+netstat : check active connections on device
+ps aux: check current running processes
+nslookup: check any domain name IP address
+ping: check if service is accessible
+
+SSH
+Secure shell: way to authenticate securely over web
+SSH key pair (private + public keys)
+Allow port 22 in firewall rule for restricted IP addresses
+ssh-keygen -t rsa
+scp = securely copy files and dir (encrypted)
