@@ -1,2 +1,45 @@
 BUILD TOOLS & PACKAGE MANAGER TOOLS
 
+package app into single movable file to deploy to environment -> artifact
+involves compiling, compressing
+keep artifact in storage with backups
+
+file different for each language
+java -> JAR or WAR file
+
+build artifact with build tool (installs dependencies and compresses)
+java -> maven or gradle
+
+run app
+java -jar <artifact_name>
+
+javascript has no special artifact type
+javascript -> npm or yarn (packager managers NOT build tools)
+package.json to manage dependencies
+npm install -> install dependencies
+npm repo for searching dependencies and install locally
+zip/tar file includes app code but NOT dependencies, so need artifact + package.json to run app
+npm start -> start app locally
+
+can package front end and back end separately or together
+front end needs to be transpiled, compressed/minified -> webpack
+npm run build
+
+push artifact into artifactory, which can then be pulled
+
+with Docker, makes process easier
+- just 1 artifact type -> Docker image
+- just 1 repo for Docker images
+- no need to install dependencies on server as can exec install cmd inside Docker img
+still need to build file first before copying into Docker img
+
+build tools for DevOps
+- help devs for building the app
+- config CI/CD pipeline
+
+
+
+
+
+
+
