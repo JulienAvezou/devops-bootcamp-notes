@@ -1,1 +1,32 @@
 CLOUD & IaaS
+
+app, jenkins need to run on server 
+
+delegate infrastructure mgmnt -> move physical server to cloud
+
+IaaS providers: 
+- aws
+- google cloud
+- microsoft azure
+- digital ocean
+
+by default all external connections to server are closed
+need to config firewall rules
+SSH port = 20
+inbound rules to range IP addresses
+
+useful cmd:
+ssh login -> ssh root@<ip-address>
+copy paste file -> scp <file_locally> <destination> (example destination: root@<ip-address>:/root
+run jar file -> java -jar <jar_file> 
+run jar file detached mode -> java -jar <jar_file> &
+check app running -> ps aux | grep java
+check on which port app is running, lists servers that have active connections -> netstat -lpnt 
+
+best practice is to create user for every app and give it only permission it needs to run the app
+add user to sudo group -> usermod -aG sudo <user_name>
+switch user -> su - <user_name>
+logout -> exit
+terminate process -> kill -9 <PID>
+
+to ssh to user, need to add file .ssh/authorized_keys containing public key of user want to log in from
