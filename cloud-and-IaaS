@@ -29,4 +29,4 @@ switch user -> su - <user_name>
 logout -> exit
 terminate process -> kill -9 <PID>
 
-to ssh to user, need to add file .ssh/authorized_keys containing public key of user want to log in from
+to ssh to user, need to add file .ssh/authorized_keys in home dir of user want to connect to, containing public key of user want to log in from
