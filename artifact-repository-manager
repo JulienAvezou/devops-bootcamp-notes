@@ -1,0 +1,29 @@
+ARTIFACT REPOSITORY MANAGER
+
+artifact -> app built into single file
+artifact repository -> storage of artifacts
+
+one repository for each artifact type, can get messy
+artifact repository manager solves this issue by managing all repos in one place
+providers: Artifactory, Nexus
+
+public repository managers 
+ex: MVNRepistory for downloading Libraries/Frameworks used as dependencies
+
+Nexus allows to host own repos but also proxy repos -> provate and public repo hosted in one place
+
+Features of Repo manager:
+- integrate with LDAP (access mgmnt config)
+- REST API for tool integrations
+- backup and restore
+- multi-format support
+- metadata tagging
+- cleanup policies
+- search functionality
+- user token support for system user auth
+
+
+
+
+
+
