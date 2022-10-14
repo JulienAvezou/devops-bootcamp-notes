@@ -22,8 +22,39 @@ Features of Repo manager:
 - search functionality
 - user token support for system user auth
 
+Nexus UI
 
+Repositories:
+- Proxy Repository
+linked to remote repo
+check if component locally, otherwise fetch on remote repo (cache)
+gives single repo endpoint for devs
+- Hosted Repository
+for internal components including 3rd party dependencies
+- Group Repository 
+have mutliple repos behind single endpoint
 
+Nexus API
 
+- use tool like curl or wget to exec http request
+- provide user and creds of Nexus user (use user with required permissions)
 
+- list all repos available
+curl -u user:pwd -X GET 'http://68.183.210.232:8081/service/rest/v1/repositories'
 
+- list all components in specific repository
+curl -u user:pwd -X GET 'http://68.183.210.232:8081/service/rest/v1/components?repository=<INSERT_REPO>'
+
+- list all assets for specific component
+curl -u user:pwd -X GET 'http://68.183.210.232:8081/service/rest/v1/components/<ID>'
+
+Blob Store
+-> Nexus storage for all components
+local or cloud storage defined by Type field (File by default, or S3)
+State field: Started or Failed
+can't be modified or deleted when used by repo (need to decide how much storage repo will need)
+
+Components vs Assets
+components -> abstract of what we are uploading (any type or format)
+assets -> actual physical packages/files
+1 component = 1 or more assets
