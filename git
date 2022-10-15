@@ -67,6 +67,9 @@ git revert <commit_hash>
 
 git merge
 
+remove local .git file (contains config for git remotes etc)
+rm -fr .git
+
 GIT for DevOps
 infrastructrue as code
 CI/CD Pipeline & build automation
