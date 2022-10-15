@@ -116,7 +116,18 @@ define during run cmd with -v option
 - named volumes (reference volume by name)
 -> most used is named volumes 
 
-
+Best practices:
+- use official Docker images as Base image
+- fixate the version to avoid breaking app
+- use leaner & smaller operating system distributions (ex: alpine) if applicable
+- optimize caching image layers (order Dockerfile cmd from least to most frequently changing, since once a layer changes all following layers are re-created as well)
+- use .dockerignore to explicitly exclude files and folders
+- use "Multi-Stage Builds" to seperate dependencies needed for build and runtime -> specify AS build --from=build in Dockerfile
+- use least privileged user in container to run the app 
+USER <user>
+- scan your images for vulnerabilities
+docker login
+docker scan <IMAGE>
 
 
 
