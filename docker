@@ -1,0 +1,72 @@
+CONTAINERS WITH DOCKER
+
+container
+-> layers of images (mostly Linux Base Image, app image on top)
+-> way to package app with all necessary dependencies & config
+-> easily shared & moved around
+-> stored in container repo
+-> DockerHub is public repo for Docker
+-> own isolated environment packaged with all needed config
+-> one cmd to install the app
+
+Makes app deployment easier as no env config needed on server, except Docker runtime (devs & ops work together to package app in container)
+
+Docker Image is the actual package
+Docker Container is when actually start the app (running env for img)
+
+Virtual Machine virtualizes both app layer and OS Kernel layer
+Docker virtualizes app layer
+-> Docker img much smaller
+-> Docker containers start & run much faster
+-> VM of any OS can run on any OS host but not Docker container (workaround Docker Toolbox that abstracts away OS Kernal)
+
+Docker architecture
+- Docker Engine
+  - Docker Server
+    - Container Runtime
+    - Volumes
+    - Network
+    - build img
+  - Docker API
+  - Docker CLI
+
+Container has port binded to it, so can talk to app running inside
+has virtual file system
+
+Each img has a tag/version
+
+Useful cmd
+docker images -> list all images available
+docker pull <IMAGE> -> fetch image
+docker run <IMAGE> -> creates and start container in attached mode (pulls and starts container)
+docker run -d <IMAGE> -> start container in detached mode
+docker stop <CONTAINER_ID>
+docker start <CONTAINER_ID>
+docker ps -> list running containers
+docker ps -a -> list bith running and stopped containters
+
+Multiple containers can run on your host machine
+but laptop has only certain ports available
+-> need to bind ports
+docker run -p<HOST_PORT>:<CONTAINER_PORT> <IMAGE>
+
+Name containers
+docker run --name <NAME> <IMAGE>
+
+Debugging
+docker logs <CONTAINER_ID> 
+docker logs <CONTAINER_NAME>
+
+Run terminal of container 
+docker exec -it <CONTAINER_ID> /bin/bash
+exit
+
+
+
+
+
+
+
+
+
+
