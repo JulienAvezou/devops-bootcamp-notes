@@ -56,16 +56,55 @@ docker run --name <NAME> <IMAGE>
 Debugging
 docker logs <CONTAINER_ID> 
 docker logs <CONTAINER_NAME>
+docker logs <CONTAINER_NAME> | tail (only show last logs)
+docker logs <CONTAINER_NAME> -f (stream logs) 
 
 Run terminal of container 
 docker exec -it <CONTAINER_ID> /bin/bash
 exit
 
+Docker Network
+-> creates isolated Docker Network where containers are running in (can talk to each other using just container name as they are in same network)
+-> provides networks by default
+-> docker network ls (check existing networks)
+-> docker network create <NAME> (create new network)
+-> pass network as option when running container with --net option
 
+Can passe env vars to container with -e option when running container 
 
+Docker Compose -> run multiple Docker containers
+-> map Docker cmd into a file
+-> takes care of creating a common Network (so no need to specify network in file)
+docker-compose -f <FILE_NAME> up
+docker-compose -f <FILE_NAME> down
 
+When you restart a container, all data is lost! 
+-> need for volumes to persist data
 
+Dockerfile -> blueprint for building images
+FROM (image based on)
+ENV
+RUN (executes linux cmd in container)
+COPY (runs on host)
+CMD (entry point cmd, so only one)
+-> docker build -t <IMG_NAME>:<VERSION_TAG> <FILE_LOCATION>
+when you adjust Docker file, need to rebuild image
 
+Delete container
+docker rm <CONTAINER_ID>
+Delete image
+docker rmi <IMAGE_ID>
+
+Docker repositories
+Can create repo on aws -> AWS ECR
+ECR allows only one img per repo (can store multiple version tags of same img in one repo)
+-> need to login to private repo
+docker login
+-> image naming in Docker repo: registryDomain/imageName:tag
+need to tag image to conform to naming format
+docker tag my-app:latest 395901524773.dkr.ecr.eu-central-1.amazonaws.com/my-app:latest
+-> push to repo
+docker push 395901524773.dkr.ecr.eu-central-1.amazonaws.com/my-app:1.0
 
 
 
