@@ -106,6 +106,17 @@ docker tag my-app:latest 395901524773.dkr.ecr.eu-central-1.amazonaws.com/my-app:
 -> push to repo
 docker push 395901524773.dkr.ecr.eu-central-1.amazonaws.com/my-app:1.0
 
+Docker Volumes
+-> persists data in Docker container
+-> folder in physical host file system is mounted into the virtual file system of Docker
+3 types volumes
+define during run cmd with -v option
+- host volume
+- anonymous volumes 
+- named volumes (reference volume by name)
+-> most used is named volumes 
+
+
 
 
 
