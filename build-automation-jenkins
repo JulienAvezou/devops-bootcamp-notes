@@ -1,0 +1,41 @@
+BUILD AUTOMATION & CI/CD W JENKINS
+
+let dedicated sever to execute tests and build images automatically
+
+Jenkins is buid automation tool that you install on dedicated server with UI
+- run tests
+- build artifacts
+- publish artifacts
+- deploy artifacts
+- send notifications
+integrates with other tools (Docker, Repos, Build tools, deployment servers ...) via plugins
+
+2 Roles for Jenkins 
+- admin
+    manages Jenkins
+    sets up cluster
+    installs plugins
+    backup data
+- user
+    create actual jobs to run workflows
+    
+Depdending on app, need to have different Tools installed and configured on Jenkins
+-> plugins
+-> directly on server
+
+Enter Docker container as root user -> -u 0
+docker exec -u 0 -it <CONTAINER_ID> bash
+
+
+
+
+
+
+
+
+TO COPY OVER TO DEMO READ.ME (WHEN READY)
+Create server on DigitalOcean and config firewall rule for Jenkins
+Install Docker
+Pull and run Jenkins container -> docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+Install build tools in Jenkins container (using Jenkins plugin manager and/or installing directly on server on which Jenkins container is running)
+
