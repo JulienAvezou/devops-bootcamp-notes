@@ -63,6 +63,9 @@ Run terminal of container
 docker exec -it <CONTAINER_ID> /bin/bash
 exit
 
+Enter Docker container as root user -> -u 0
+docker exec -u 0 -it <CONTAINER_ID> bash
+
 Docker Network
 -> creates isolated Docker Network where containers are running in (can talk to each other using just container name as they are in same network)
 -> provides networks by default
