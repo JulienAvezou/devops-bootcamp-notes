@@ -20,11 +20,10 @@ integrates with other tools (Docker, Repos, Build tools, deployment servers ...)
     create actual jobs to run workflows
     
 Depdending on app, need to have different Tools installed and configured on Jenkins
--> plugins
--> directly on server
+-> plugins (install then configure then add as step in job build)
+-> directly on server (more flexibility)
 
-Enter Docker container as root user -> -u 0
-docker exec -u 0 -it <CONTAINER_ID> bash
+/workspace -> where git repos stored in jenkins when checked out in jobs
 
 
 
@@ -34,8 +33,11 @@ docker exec -u 0 -it <CONTAINER_ID> bash
 
 
 TO COPY OVER TO DEMO READ.ME (WHEN READY)
-Create server on DigitalOcean and config firewall rule for Jenkins
-Install Docker
-Pull and run Jenkins container -> docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
-Install build tools in Jenkins container (using Jenkins plugin manager and/or installing directly on server on which Jenkins container is running)
+1. Create server on DigitalOcean and config firewall rule for Jenkins. Install Docker
 
+2. Pull and run Jenkins container -> docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+
+3. Install build tools in Jenkins container (using Jenkins plugin manager and/or installing directly on server on which Jenkins container is running)
+
+4. Create a simple job in Jenkins and run a build
+IMG1
