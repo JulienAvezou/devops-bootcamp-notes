@@ -23,9 +23,8 @@ Depdending on app, need to have different Tools installed and configured on Jenk
 -> plugins (install then configure then add as step in job build)
 -> directly on server (more flexibility)
 
+/jobs -> where jobs stored in jenkins
 /workspace -> where git repos stored in jenkins when checked out in jobs
-
-
 
 
 
@@ -41,3 +40,13 @@ TO COPY OVER TO DEMO READ.ME (WHEN READY)
 
 4. Create a simple job in Jenkins and run a build
 IMG1
+
+5. Configure Jenkins access to Source Code Mgmnt (Github in this case)
+IMG2
+
+6. Run another build for the same job and verify that repo was checked out
+IMG3
+IMG4
+
+7. Add 'package' command from maven to build steps, when checking out branch on github repo, and verify that artifact was built successfully
+IMG5
