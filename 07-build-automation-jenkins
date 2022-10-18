@@ -60,5 +60,20 @@ docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home -v /
 9. Give jenkins user permissions to read and write Docker /var/run/docker.sock
 as root user run: chmod 666 /var/run/docker.sock
 
+10. Build Docker image from Jenkins using Dockerfile
+IMG6
+IMG7
+
+11. Create repo on Dockerhub and add credentials to Jenkins
+IMG8
+
+12. Add Docker scripts in Jenkins job build to login to Dockerhub using credentials added and push to the Dockerhub repo (for credentials use secret texts to create variables used in commands for login)
+IMG9
+IMG10
+
+13. Run the build and check in Dockerhub repo that image is there
+IMG11
+IMG12
+
 
 
