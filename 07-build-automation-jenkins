@@ -26,6 +26,9 @@ Depdending on app, need to have different Tools installed and configured on Jenk
 /jobs -> where jobs stored in jenkins
 /workspace -> where git repos stored in jenkins when checked out in jobs
 
+Make Docker available in Jenkins -> attach volume to Jenkins from the host file (mount Docker runtime directory from host server into the container as a volume)
+
+
 
 
 
