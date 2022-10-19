@@ -28,9 +28,18 @@ Depdending on app, need to have different Tools installed and configured on Jenk
 
 Make Docker available in Jenkins -> attach volume to Jenkins from the host file (mount Docker runtime directory from host server into the container as a volume)
 
+Pipeline Job vs Freestyle Job (= pipeline is superset of freestyle jobs)
+-> Freestyle Job with 1 job/step (limited as config via UI not scripting/limited to input fields of Plugin: not suitable for complex workflows)
+-> Pipeline suitable for CI/CD, scripting - pipeline as code (exec steps in parallel, need user input, conditional statement, set variables, easier to manage and change over time)
 
+-> Pipeline script written in Groovy
+-> Best practice to have Pipeline script in Git repo
 
-
+-> Create Jenkinsfile that runs script
+-> required fields:
+"pipeline" - top level
+"agent" - where to exec
+"stages" and "steps" - where scripts run
 
 
 
@@ -74,6 +83,17 @@ IMG10
 13. Run the build and check in Dockerhub repo that image is there
 IMG11
 IMG12
+
+14. Create pipeline job that connects to Git repo
+IMG13
+
+15. Create Jenkinsfile in configured repo
+IMG14
+
+16. Build pipeline job
+IMG15
+
+
 
 
 
