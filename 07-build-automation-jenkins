@@ -86,7 +86,14 @@ Credentials in Jenkins
 - scopes: system (only available on Jenkins server), global (access everywhere), project (scope to project, onyl available for multibranch pipeline)
 - type (username w password, SSH, secret file etc.)
 
- 
+Jenkins Shared Library (share logic across projects)
+- extension to pipeline
+- has own repo
+- reference shared logic in Jenkinsfile
+Folder structure of shared lib
+- vars folder - fn we call from Jenkinsfile, each its own groovy file
+- src folder - helper code
+- resources folder - external lib, non groovy files
 
 
 
