@@ -35,11 +35,51 @@ Pipeline Job vs Freestyle Job (= pipeline is superset of freestyle jobs)
 -> Pipeline script written in Groovy
 -> Best practice to have Pipeline script in Git repo
 
+Jenkinsfile syntax
 -> Create Jenkinsfile that runs script
 -> required fields:
 "pipeline" - top level
 "agent" - where to exec
 "stages" and "steps" - where scripts run
+    conditionals "when" "expression"
+"post" - exec some logic after all stages exec
+  conditionals "always" "success" "failure"
+"tools" - access build tools (supports maven, gradle, jdk)
+"parameters" (params.name) -> Build with parameters option in Jenkisn GUI
+    string(name, defaultValue, description)
+    choice(name, choices, description)
+    booleanParam(name, defaultValue, description)
+ "input" - prompts user for input
+    "message"
+    "ok"
+    "parameters"
+ 
+ENV
+check which vars available from Jenkins /env-vars.html
+ -> eg. env BRANCH_NAME available out of box ('dev' 'master' etc)
+can create own env vars 
+"environment" 
+interpolatation in groovy "this is my ${ENV_VAR}"
+
+Credentials
+1. Binds creds to env
+can define credentials in Jenkins GUI
+"credentials("credentialsId")" binds creds to env var
+need "Credentials Binding" Plugin 
+2. withCredentials([]) {}
+
+Using external Groovy scripts
+"script"
+load "script.groovy" into var
+call functions defined in groovy script using var.fn()
+all env vars available in Jenkinsfile are available in groovy script
+
+Replay option in Jenkins GUI allows to test different build scripts without comitting changes to git repo
+
+
+
+
+ 
 
 
 
