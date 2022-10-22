@@ -75,9 +75,16 @@ call functions defined in groovy script using var.fn()
 all env vars available in Jenkinsfile are available in groovy script
 
 Replay option in Jenkins GUI allows to test different build scripts without comitting changes to git repo
+Can rerun a particular stage
 
+Multibranch Pipeline
+- need pipelines for all branches
+- need different behaviour based on branch
+- creates piepline for all branches that have Jenkinsfile
 
-
+Credentials in Jenkins
+- scopes: system (only available on Jenkins server), global (access everywhere), project (scope to project, onyl available for multibranch pipeline)
+- type (username w password, SSH, secret file etc.)
 
  
 
@@ -132,6 +139,16 @@ IMG14
 
 16. Build pipeline job
 IMG15
+
+17. Enhance pipeline job to build jar and push to Docker hub
+IMG16
+IMG17
+
+18. Create multibranch pipeline
+IMG18
+IMG19
+
+
 
 
 
