@@ -90,6 +90,7 @@ Jenkins Shared Library (share logic across projects)
 - extension to pipeline
 - has own repo
 - reference shared logic in Jenkinsfile
+- can config in Jenkins to be shared globally or scoped to project (scope defined in Jenkinsfile)
 Folder structure of shared lib
 - vars folder - fn we call from Jenkinsfile, each its own groovy file
 - src folder - helper code
@@ -154,6 +155,17 @@ IMG17
 18. Create multibranch pipeline
 IMG18
 IMG19
+
+19. Create Jenkins Shared Library
+IMG20
+
+20. Configure Jenkins to be able to use Shared Library
+IMG21
+
+21. Use Shared Library in Jenkinsfile
+IMG22
+
+22. Refactor Jenkins Shared Library & Jenkinsfile to use groovy classes and separate functions, and scope to project
 
 
 
