@@ -98,4 +98,5 @@ Folder structure of shared lib
 
 Trigger pipeline automatically when changes happen in git repo (or schedule or manually)
 -> git repo & Jenkins need to be configured for that
+-> for multibranch pipeline add plgin in Jenkins, define webhook token, create webhook endpoint and triggers in git SCM
 
