@@ -95,3 +95,7 @@ Folder structure of shared lib
 - vars folder - fn we call from Jenkinsfile, each its own groovy file
 - src folder - helper code
 - resources folder - external lib, non groovy files
+
+Trigger pipeline automatically when changes happen in git repo (or schedule or manually)
+-> git repo & Jenkins need to be configured for that
+
