@@ -100,3 +100,27 @@ Trigger pipeline automatically when changes happen in git repo (or schedule or m
 -> git repo & Jenkins need to be configured for that
 -> for multibranch pipeline add plgin in Jenkins, define webhook token, create webhook endpoint and triggers in git SCM
 
+Versioning the app
+- each build tool or package manager keeps version
+- you decide how you version app
+- 3 parts of a version: <major>.<minor>.<patch>-<suffix> eg: v4.2.1-SNAPSHOT
+    major: big changes, not backwards-compatible
+    minor: new but backward-compatible changes, API changes
+    patch: minor changes and bug fixes, no change to API
+    suffix: provides more info
+- should increment automatically inside build automation
+- build tools have cmd to increment version
+    eg for maven: 
+    mvn build-helper:parse-version \ 
+    versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion} versions:commit
+- to increment Docker image version, use app version, also need change in Dockerfile
+- clean packages after incrementing in Jenkins pipeline so that Dockerfile can build image with the correct jar file
+    
+
+
+
+
+
+
+
+
