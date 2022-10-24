@@ -115,12 +115,6 @@ Versioning the app
     versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion} versions:commit
 - to increment Docker image version, use app version, also need change in Dockerfile
 - clean packages after incrementing in Jenkins pipeline so that Dockerfile can build image with the correct jar file
-    
-
-
-
-
-
-
-
-
+- to persist app versioning, need to commit git changes to the remote repo from Jenkins (will need to pull changes to local after to have up to date changes in remote repo)   
+- to avoid infinite loop (webhook push trigger <-> Jenkins pushing to git), need to identify git commits from Jenkins and ignore them when triggering automatic builds
+    can use plugin for this and configure 'ignore committer strategy'
