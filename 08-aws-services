@@ -1,0 +1,52 @@
+AWS SERVOCES
+
+Examples of services provided by AWS
+  EC2 - virtual servers
+  S3 - storage
+  VPC - network
+  IAM - users & permissions
+  ECR - container storage
+  ECS - container orchestration 
+  EKS - container orchestration w Kubernetes
+
+Services scopes:
+  1. global - eg. IAM
+  2. region - eg. S3, VPC
+  3. AZ (Availability Zone) - eg. EC2
+
+IAM - Identity Access Management
+  create users and assigning permission to them
+  best practice to create admin user with less privileges than root user (root created by default when creating AWS account)
+  this admin user can then create other human users & system users
+  groups can be created
+  unlike IAM users, policies can't be set directly for AWS services - need to create IAM role first and then attach the policy to the IAM role (policy specific to service)
+
+Regions and AZ
+  Region = physical regions where data centers are clustered
+  Availability Zone = 1 or more discrete data centers - used for replication/backups
+
+VPC - Virtual Private Cloud
+  created by default for each region
+  own isolatted network in cloud
+  spans all AZ (Subnet) in that Region
+  Subnet for each AZ - private network inside network
+  Firewall Rule config make Subnet either private or public
+  internal IP range for VPC - for comm inside VPC, not for external traffic
+  Subnet then gets sub IP range based on VPC's internal IP range
+  also get public IP address 
+  Internet Gateway connects VPC to outside internet
+  NACL (Network Access Control List) config access on subnet level 
+  Security Group config access on instance level
+
+CIDR Blocks
+  range of IP addresses
+  lower number /xx - the higher the range
+  VPC has CIDR block - Subnet sub CIDR block
+  
+  
+  
+  
+
+
+
+
