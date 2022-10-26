@@ -1,4 +1,4 @@
-AWS SERVOCES
+AWS SERVICES
 
 Examples of services provided by AWS
   EC2 - virtual servers
@@ -43,7 +43,8 @@ CIDR Blocks
   lower number /xx - the higher the range
   VPC has CIDR block - Subnet sub CIDR block
   
-  
+EC2 - virtual server in AWS cloud
+
   
   
 
