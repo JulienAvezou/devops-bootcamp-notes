@@ -1,0 +1,32 @@
+CONTAINER ORCHESTRATION w KUBERNETES
+
+deploy more complex apps under microservices architecture (multiple containers)
+- high availability/no downtime
+- scalability/high performance
+- disaster recovery/backup and restore
+
+K8s components:
+1. Node - physical or virtual server
+2. Pod - abstraction over container (smallest unit of K8s)
+  each Pod gets its own IP address
+  Pods are ephemeral (can die easily), IP address recreated as new Pod recreated
+3. Service - permanent IP address that can be attached to Pod, also acts as load balancer between Pods
+4. Ingress - forwarding from request to Service (allows display dns in url)
+5. ConfigMap - external config of app
+6. Secret - used to store secret data, base64 encoded
+7. Volumes - persists data
+8. Deployment - blueprint for Pods (number of replicas) - abstraction layer over Pods
+10. StatefulSet - Deployment for stateful apps or DBs
+
+K8s architecture:
+  each worker node has mutliple pods in it
+  3 processes must be installed on every node:
+    - container runtime (docker, container d ...)
+    - Kubelet - interacts with both container and node
+    - Kube proxy - forwards request from pods
+  master nodes have 4 processes running:
+    - api server - gateway & auth
+    - scheduler - schedules pods across nodes
+    - controller manager - detects state changes (eg crashing pods) and tries recover cluster state
+    - etcd - key value store of cluster state
+
