@@ -58,3 +58,27 @@ K8s config file
   connect deployment to pods, deployment to services using labels & selectors
   need to config ports for services (targetPort = container port)
 
+Namespaces - organise resources
+4 namespaces by default:
+  - kube-system - system processes (DONT modify)
+  - kube-public - configmap containing cluster info
+  - kube-node-lease - heartbeat of nodes for availability
+  - default - resources you create if haven't specified custom namespace
+create namespaces options:
+  1. kubectl create namespace <NAME>
+  kubectl get namespace
+  2. create with config file
+  kubectl apply -f <FILENAME> --namespace=<NAMESPACE>
+  (or include directly in config file metadata)
+why?
+  - group resources in Namespaces to get better overview of resources
+  - avoid conflicts between teams
+  - resource sharing (dev and staging, blue/green prod)
+  - access and resource limits (CPU, RAM, Storage)
+considerations:
+  each NS needs own configMap & secrets
+  services can be shared across NS
+  volumes & nodes can't be created within NS
+  can change the default NS w kubens
+  
+
