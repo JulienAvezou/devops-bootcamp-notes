@@ -56,7 +56,7 @@ K8s config file
   store file w code
   pod has own config inside config
   connect deployment to pods, deployment to services using labels & selectors
-  need to config ports for services (targetPort = container port)
+  need to config ports for services (targetPort = container port that service wants to connect to)
 
 Namespaces - organise resources
 4 namespaces by default:
@@ -80,5 +80,12 @@ considerations:
   services can be shared across NS
   volumes & nodes can't be created within NS
   can change the default NS w kubens
-  
+
+Service is abstraction layer that has IP address
+Services can have multiple ports, but they have to be named in this case
+Services types:
+  - ClusterIP: default type
+  - Headless: set 'clusterIP: None' (no service IP given, meaning that client will talk directly to Pod IP instead, useful when need to talk to specific Pods that differ because of state for eg)
+  - NodePort: accessible from outside cluster using fixed port on each Worker node (range 30.000 - 32.767), however not secure
+  - LoadBalancer: cluster becomes accessible using cloud providers native load balancer (extension and more secure alternative to NodePort which should only be used for quick testing)
 
