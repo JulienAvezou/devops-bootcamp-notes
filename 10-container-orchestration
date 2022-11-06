@@ -89,3 +89,12 @@ Services types:
   - NodePort: accessible from outside cluster using fixed port on each Worker node (range 30.000 - 32.767), however not secure
   - LoadBalancer: cluster becomes accessible using cloud providers native load balancer (extension and more secure alternative to NodePort which should only be used for quick testing)
 
+Ingress
+  preferred alternative to external service
+  routing rules to map to service name and port
+  domain name needs to be valid and based on IP address of node entry point
+  need to install Ingress controller to evaliate all rules
+  default backend if no service mapping found -> can create service with name 'default-http-backend' to handle such cases port 80
+  can define multiple paths for same host
+  can have multiple hosts with 1 path, each host representing a subdomain
+  can configure https by importing tls certificate as secret within same namespace
