@@ -98,3 +98,12 @@ Ingress
   can define multiple paths for same host
   can have multiple hosts with 1 path, each host representing a subdomain
   can configure https by importing tls certificate as secret within same namespace
+  
+Volumes
+  persist data
+  need to decide what type of storage is needed and manage it yourself
+  not namespaced, accessible from everywhere in cluster
+  provisioned by admin
+  application needs to claim volume storage via Persistent Volume Claim (pvc) - both claim and pod claiming need to be in same namespace
+  can create Storage Class to provision Persistent Volumes dynamically (abstracts underlying storage provider)
+  
