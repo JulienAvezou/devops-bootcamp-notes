@@ -106,4 +106,7 @@ Volumes
   provisioned by admin
   application needs to claim volume storage via Persistent Volume Claim (pvc) - both claim and pod claiming need to be in same namespace
   can create Storage Class to provision Persistent Volumes dynamically (abstracts underlying storage provider)
-  
+ConfigMap & Secret volumes ( = local volume types)
+  can create individual key-value pairs - as env vars
+  or mount files - mount as volume types
+  1) mount volume into pods 2) mount volume into container (mountPath, path depends on type app that is mounted)
