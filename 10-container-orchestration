@@ -110,3 +110,14 @@ ConfigMap & Secret volumes ( = local volume types)
   can create individual key-value pairs - as env vars
   or mount files - mount as volume types
   1) mount volume into pods 2) mount volume into container (mountPath, path depends on type app that is mounted)
+  
+StatefulSet = deploying stateful apps
+  persistent id for each pod
+  only master pod allowed to write data, all other worker pods can only read
+  each pod has own storage (for PV use remote storage), continuously sync data between pods
+  each new pod clones data from previous up-to-date pod
+  each pod gets own fixed DNS endpoint
+  
+  
+  
+  
