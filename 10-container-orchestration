@@ -127,9 +127,13 @@ Managed Kubernetes Services
 Helm - package manager for K8s
   Help Charts - pkg YAML files & distribute them in public + private repos to be shared
   can find deployments w Helm
-    helm search <keyword>
-    browse Helm Hub
+    helm search repo <keyword>
+    OR browse Helm Hub
   templating engine: define common blueprint and replace dynamic values (useful for deployments and across environments)
-  
+  cmd:
+    helm search repo <keyword>
+    help repo add <keyword>
+    helm install <pod_name> --values <values_file> <helm_chart>
+    helm uninstall <helm_chart>
   
   
