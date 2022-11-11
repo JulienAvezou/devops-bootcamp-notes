@@ -124,3 +124,12 @@ Managed Kubernetes Services
   choose regions to setup closest to users
   can automate provisioning of cluster as many providers integrate with tools like Terraform
   
+Helm - package manager for K8s
+  Help Charts - pkg YAML files & distribute them in public + private repos to be shared
+  can find deployments w Helm
+    helm search <keyword>
+    browse Helm Hub
+  templating engine: define common blueprint and replace dynamic values (useful for deployments and across environments)
+  
+  
+  
