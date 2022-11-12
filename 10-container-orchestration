@@ -136,4 +136,11 @@ Helm - package manager for K8s
     helm install <pod_name> --values <values_file> <helm_chart>
     helm uninstall <helm_chart>
   
+  Pull from private Docker repo
+    1. create secret component w creds for Docker registry - type dockerconfigjson
+      kubectl create secret docker-registry <secret_name> --docker-server=<registry_url> --docker-username=<username> --docker-password=<password> 
+      (only use above cmd for 1 secret, otherwise use 2-step docker login + secret config file)
+    2. config deployment to use secret - imagePullSecrets
+      force to pull Docker img even if already exists locally - imagePullPolicy: Always
+    secret must be in same namespace as the deployment
   
