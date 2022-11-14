@@ -144,3 +144,10 @@ Helm - package manager for K8s
       force to pull Docker img even if already exists locally - imagePullPolicy: Always
     secret must be in same namespace as the deployment
   
+  Operators
+    mainly for stateful apps
+    custom control loop mechanism
+    custom K8s components 
+    automatically manage full lifecycle of stateful apps
+    those with domain specific knowledge create operator for that purpose
+    
