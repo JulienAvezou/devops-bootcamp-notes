@@ -18,6 +18,8 @@ K8s components:
 8. Deployment - blueprint for Pods (number of replicas) - abstraction layer over Pods
 10. StatefulSet - Deployment for stateful apps or DBs
 11. Replicaset - abstraction layer between pods and deployments (manages replicas of pods)
+12. DaemonSet - runs on every worker node 
+13. CRD - Custom Resource Definition
 
 K8s architecture:
   each worker node has mutliple pods in it
@@ -150,4 +152,6 @@ Helm - package manager for K8s
     custom K8s components 
     automatically manage full lifecycle of stateful apps
     those with domain specific knowledge create operator for that purpose
+    
+    
     
