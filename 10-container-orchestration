@@ -153,5 +153,20 @@ Helm - package manager for K8s
     automatically manage full lifecycle of stateful apps
     those with domain specific knowledge create operator for that purpose
     
+  Authorization & RBAC (Role Based Access Control)
+    For Devs restrict access to only specific namespace = RBAC via Role component & RoleBinding component
+    Role defines resources and access permissions
+    RoleBinding (link Role to User or Group)
+    For Admins restrict access to cluster-wide ops = RBAC via ClusterRole & ClusterRoleBinding components
+    K8s relies on external sources for auth (static token file, certificates, 3rd party id service like LDAP) via API Server 
+    For App Users can use ServiceAccount (component that represents Service User)
+    Can link ServiceAccount to Role via RoleBinding or ClusterRole via ClusterRoleBinding
+    'auth can-i' - Kubectl cmd to check permissions for current user
+  
+  Microservices in K8s
+    microservices communicate via API calls or message-based communication
+    popular archtiecture currently is Service Mesh architecture - each microservice has own helper app (ie. SideCar container) that help communication between services
+    
+    
     
     
