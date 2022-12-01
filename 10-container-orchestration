@@ -177,3 +177,20 @@ Helm - package manager for K8s
       - on which port each microservice starts 
       - namespaces?
       
+ Best practices K8s
+  - specify pinned version for each image
+  - configure livenessProbe on each container to check if app is healthy
+  - config readinessProbe on each container to check if app has started up successfully (exec, tcpSocket, HTTP probes)
+  - config resource requests for each container (cpu, memory)
+  - config resource limits
+  - don't expose a NodePort (as exposes entrypoint on each worker node) - best to use LoadBalancer or Ingress, that creates single entrypoint to cluster)
+  - config more than 1 Replica for Deployment
+  - use more than 1 worker node in cluster
+  - use labels for all resources
+  - group resources in Namespaces
+  - ensure images are free of vulnerabilities (perform vulnerability scans)
+  - no root access for containers 
+  - update K8s to latest version (best to do node by node to avoid app downtime)
+  
+  
+  
