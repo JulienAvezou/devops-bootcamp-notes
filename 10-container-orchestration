@@ -20,6 +20,7 @@ K8s components:
 11. Replicaset - abstraction layer between pods and deployments (manages replicas of pods)
 12. DaemonSet - runs on every worker node 
 13. CRD - Custom Resource Definition
+14. emptyDir - ephemeral volume type that is created when a Pod is assigned to a Node, exists as long as the Pod is running (data safe across container crashes)
 
 K8s architecture:
   each worker node has mutliple pods in it
@@ -166,7 +167,13 @@ Helm - package manager for K8s
   Microservices in K8s
     microservices communicate via API calls or message-based communication
     popular archtiecture currently is Service Mesh architecture - each microservice has own helper app (ie. SideCar container) that help communication between services
-    
-    
-    
-    
+    Useful info as DevOps:
+      - what microservices are being deployed?
+      - how they are connected? (Useful to create a connector graph)
+      - any 3rd party services or databases?
+      - which Service is accessible from outside the cluster?
+      - image names for each microservice
+      - envs for each microservice
+      - on which port each microservice starts 
+      - namespaces?
+      
