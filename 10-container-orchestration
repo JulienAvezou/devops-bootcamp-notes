@@ -128,7 +128,7 @@ Managed Kubernetes Services
   can automate provisioning of cluster as many providers integrate with tools like Terraform
   
 Helm - package manager for K8s
-  Help Charts - pkg YAML files & distribute them in public + private repos to be shared
+  Helm Charts - pkg YAML files & distribute them in public + private repos to be shared
   can find deployments w Helm
     helm search repo <keyword>
     OR browse Helm Hub
@@ -138,6 +138,16 @@ Helm - package manager for K8s
     help repo add <keyword>
     helm install <pod_name> --values <values_file> <helm_chart>
     helm uninstall <helm_chart>
+ 
+ Helmfile - declare a definition of an entire K8s cluster in single yaml file to deploy
+  - brew install helmfile
+  - helmfile sync
+  - helmfile list
+  - helmfile destroy
+
+Host Helm charts in git repo:
+- with app code
+- or on seperate git repo for helm charts
   
   Pull from private Docker repo
     1. create secret component w creds for Docker registry - type dockerconfigjson
@@ -192,5 +202,6 @@ Helm - package manager for K8s
   - no root access for containers 
   - update K8s to latest version (best to do node by node to avoid app downtime)
   
-  
+
+
   
