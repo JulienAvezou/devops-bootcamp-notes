@@ -9,3 +9,9 @@ https://github.com/JulienAvezou/devops-bootcamp-project-2
 
 https://github.com/JulienAvezou/devops-bootcamp-project-3
 
+https://github.com/JulienAvezou/devops-bootcamp-project-4
+
+https://github.com/JulienAvezou/devops-bootcamp-project-6
+
+https://github.com/JulienAvezou/devops-bootcamp-project-7
+
