@@ -1,0 +1,24 @@
+K8s on AWS - EKS
+
+ECS vs EKS
+
+  ECS - Elastic Container Service - manage lifecycle of containers
+    create ECS cluster containing all services to manage containers (control plane)
+    containers themselves run on EC2 instances (Docker and ECS agents to communicate w control plane)
+    still need to manage the instances (more effort but better control of infrastructure)
+    EC2 vs Fargate
+      Fargate is alternative to EC2 instances - serverless way to launch containers (no need to provision & manage servers)
+  EKS - managing K8s cluster on AWS
+    option if already use K8s
+    K8s is open-source, less lock-in effect with ECS that is specific to AWS so more difficult to migrate
+    better option in general for managing containers 
+  
+Steps to create EKS cluster
+1. provision EKS cluster
+2. create NodeGroup of EC2 instances
+3. connect NodeGroup to EKS cluster
+
+ECR - Elastic Container Registry 
+  repo for Docker images
+  integrates well with other AWS services
+  
