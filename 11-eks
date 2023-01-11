@@ -22,3 +22,7 @@ ECR - Elastic Container Registry
   repo for Docker images
   integrates well with other AWS services
   
+Fargate profile runly one pod per virtual machine (so no adapted to stateful apps)
+Uses namespaces and labels to select which pods run with Fargate (when using combination of both node groups and fargate)
+
+can use eksctl to create clusters instead of aws console
