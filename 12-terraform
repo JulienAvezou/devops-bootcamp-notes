@@ -16,4 +16,5 @@ Providers
   good practice to define separate file providers.tf that contains all required providers config (specific versions etc)
   provider gives access to api of certain technology (aws for ex) -> can interact with all provider resources
   
-  
+  resource -> create new resources
+  data -> query existing resources
