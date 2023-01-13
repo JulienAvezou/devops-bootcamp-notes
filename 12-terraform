@@ -18,3 +18,5 @@ Providers
   
   resource -> create new resources
   data -> query existing resources
+  
+  always apply terraform config file
