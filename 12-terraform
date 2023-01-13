@@ -1,0 +1,19 @@
+Terraform -> automate & manage infrastructure
+declarative -> define end state
+
+connects to platform provider using:
+  - core (tf-config + state inputs) -> compares actual vs desired state
+  - providers each giving access to ressources
+
+useful cmd:
+  refresh
+  plan
+  apply
+  destroy
+
+Providers
+  not included in Terraform download -> providers need to be installed 'terraform init'
+  good practice to define separate file providers.tf that contains all required providers config (specific versions etc)
+  provider gives access to api of certain technology (aws for ex) -> can interact with all provider resources
+  
+  
