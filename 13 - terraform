@@ -1,0 +1,14 @@
+Terraform -> automate & manage infrastructure
+declarative -> define end state
+
+connects to platform provider using:
+  - core (tf-config + state inputs) -> compares actual vs desired state
+  - providers each giving access to ressources
+
+useful cmd:
+  refresh
+  plan
+  apply
+  destroy
+
+
