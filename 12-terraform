@@ -20,3 +20,13 @@ Providers
   data -> query existing resources
   
   always apply terraform config file
+  
+variables
+  create vars in terraform.tfvars file
+  terraform apply -var-file <file>
+  use variables to replicate same infrastructure for different environments
+  can provide default values
+  can type vars
+  
+  can declare global env vars -> export TF_VAR_<var_name>="<value>"
+  then ref var in config file
