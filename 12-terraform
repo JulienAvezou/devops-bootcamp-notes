@@ -42,4 +42,11 @@ provisioners
   provisioners NOT recommended by terraform - can lead to unexpected behavior, breaks idempotency concept -> best to use config mgmnt tools instead of "remote exec" (ex Ansible)
   best to use local provider instead of "local-exec" provisioner
   
+ modules
+  group resources that can be reused based on a logical unit
+  works with inputs (variables) and outputs (values)
+  dependent on providers 
+  
+  file structure with "root" module and child modules with each their own config
+  whenever module changed/added, need to run terraform init
   
