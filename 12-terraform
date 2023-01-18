@@ -1,6 +1,12 @@
 Terraform -> automate & manage infrastructure
 declarative -> define end state
 
+advantages:
+- version control (history)
+- simple replication of infratructure possible
+- simple clean-up
+- easier team collaboration
+
 connects to platform provider using:
   - core (tf-config + state inputs) -> compares actual vs desired state
   - providers each giving access to ressources
