@@ -56,3 +56,24 @@ provisioners
   file structure with "root" module and child modules with each their own config
   whenever module changed/added, need to run terraform init
   
+ Remote State
+  terraform writes data to remote data store
+  benefits:
+    - share state among team
+    - backup for data
+    - keep sensitive data off disk
+  configured in terraform metadata in tf config using 'backend' attribute
+  need to run terraform init to connect to backend
+  
+  Best practices
+    - only change state using TF cmd
+    - set up remote storage backend for state file for team sharing
+    - use state locking to avoid concurrent edit conflicts
+    - backup state file - enable versioning 
+    - use 1 state per environment 
+    - host TF scripts in own git repo
+    - CI for TF code
+    - apply infra changes only through CD pipeline
+  
+ 
+  
