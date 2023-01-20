@@ -1,0 +1,23 @@
+PYTHON
+
+programming lang
+
+  easy to learn
+  large ecoysystem
+  flexible
+  
+ used for:
+  web dev
+  data science
+  machine learning
+  AI
+  web scraping
+  automation (modules for CI/CD, modules for AWS, modules for monitoring, auto backups/cleanups, excel sheets auto)
+  
+ data types
+  String
+  Integer
+  Float
+  
+  stringify: str()
+  concatenate: f"{}"
