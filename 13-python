@@ -18,6 +18,65 @@ programming lang
   String
   Integer
   Float
+  Boolean
+  Lists
+  Sets
   
+ py built-in fn
   stringify: str()
+  casting to number: int()
+  cast to set: set()
   concatenate: f"{}"
+  check which data type an input is: type()
+  check if value is int: .isdigit()
+  return list from string: .split()
+  access el list <list>[index]
+  add el to list: .append(<el>)
+  add el to set: .add(<el>)
+  add el from list or set: .remove(<el>)
+  
+ variables
+  dynamically typed
+  use descriptive names
+  
+ functions
+ define the fn:
+  def <fn_name>(): 
+    block_code
+  need to call the fn:
+   <fn_name>()
+  can pass inputs to fn using parameters
+  var only available from inside region it is created -> global scope and local scope (only accessed from inside the fn)
+  can return value in fn
+  
+  accept user input
+    input("<content>\n")
+    \n : new line
+  
+  conditionals
+    if <condition_block>:
+      return <block_code>
+    elif <condition_block>:
+      return <block_code>
+    else:
+      return <block_code>
+  
+  try-except
+    tries to execute block code and catches error if block fails
+    try:
+      <block_code>
+    except:
+      <block_code>
+  
+  loops
+    While
+      while <condition_block>:
+        <block_code>
+    For
+      for <element> in <list>:
+        <block_code>
+   
+   comments
+     # insert comment here, single line
+     """ <block> """ insert comment, multiple lines
+      
