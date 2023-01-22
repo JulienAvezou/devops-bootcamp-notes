@@ -21,6 +21,7 @@ programming lang
   Boolean
   Lists
   Sets
+  Dictionary
   
  py built-in fn
   stringify: str()
@@ -79,4 +80,10 @@ programming lang
    comments
      # insert comment here, single line
      """ <block> """ insert comment, multiple lines
+     
+   modules
+    basically a .py file
+    can import: import <file_name>
+    if want to just import specific fn from module: from <file_name> import <fn_name>
+    built-in modules are accessible out of the box
       
