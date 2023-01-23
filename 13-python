@@ -86,4 +86,9 @@ programming lang
     can import: import <file_name>
     if want to just import specific fn from module: from <file_name> import <fn_name>
     built-in modules are accessible out of the box
-      
+   
+   third-party packages
+     can find them on pypi.org
+     module is python file vs package which is a collection of python modules
+     pip: pkg manager
+     
