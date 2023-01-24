@@ -92,3 +92,13 @@ programming lang
      module is python file vs package which is a collection of python modules
      pip: pkg manager
      
+    classes & objects - OOP (object oriented programming)
+      class is an object constructor
+      blueprint for attributes and behaviors
+      classes have __init__ fn - will run automatically when object is instantiated
+      self is ref to current object / instance of the class
+      need to pass self into all class fn / method
+      one file per class
+      
+      almost eveything in Python is an object 
+      
