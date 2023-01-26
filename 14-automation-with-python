@@ -10,3 +10,4 @@ terraform vs python
   - tf manages state of infra, idempotency is respected however py doesn't have state
   - tf is higher level
   - with python boto you can do more things because of its low-level API, more complex logic possible (monitoring, backUps, scheduled tasks etc.)
+  - because py is program lang, can also create useful web ui views to interact with data
