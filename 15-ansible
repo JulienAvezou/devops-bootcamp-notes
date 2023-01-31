@@ -1,0 +1,29 @@
+Ansible
+-> tool to automate IT tasks
+
+Advantages:
+ 1. exec tasks from own machine
+ 2. config steps in single YAML file
+ 3. re-use same file multiple times
+ 4. more reliable
+
+Ansible is agentless -> only need to install on one machine
+
+Works w modules that get pushed to remote server, do their specific task, then removed
+Can use vars w Ansible
+
+Ansible Playbooks:
+  task = execution of module w arguments + description
+  tasks are executed in a sequence
+  Play = sequence of tasks with host (where task should be executed) and remote_user (which user should exec tasks) defined
+  Playbook = 1 or more Plays in single YAML file (can name Plays)
+  
+Values of hosts come from Ansible Inventory List, these hosts can be grouped
+Vars can also be defined at group level to avoid repeating info for multiple hosts in that group
+
+ad-hoc cmd:
+  ansible all -i hosts -m ping
+  ansible <HOST_GROUP || HOST> -i hosts -m <MODULE>
+
+ 
+ 
