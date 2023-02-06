@@ -8,6 +8,7 @@ Advantages:
  4. more reliable
 
 Ansible is agentless -> only need to install on one machine
+is idempotent too
 
 Works w modules that get pushed to remote server, do their specific task, then removed
 Can use vars w Ansible
@@ -21,9 +22,19 @@ Ansible Playbooks:
 Values of hosts come from Ansible Inventory List, these hosts can be grouped
 Vars can also be defined at group level to avoid repeating info for multiple hosts in that group
 
+Ansible collection = packaging format for bundling and distributing Ansible content
+Ansible Galaxy = online hub for finding & sharing ansible community content
+for big ansible projects, can create own collection
+
+plugin = enhance module functionality
+
 ad-hoc cmd:
   ansible all -i hosts -m ping
   ansible <HOST_GROUP || HOST> -i hosts -m <MODULE>
+  ansible-playbook -i <HOSTS_FILE> <PLAYBOOK_YAML_FILE>
+  ansible-galaxy collection install <COLLECTION_NAME>
 
- 
- 
+host key checking is enabled by default on ansible -> if dealing with ephemeral servers, can be practical to disable host key checking via ansible config file
+for long term servers, not good practice to disable host key checking, so best to just do ssh setup once manually, following cmd can help:
+ ssh-keyscan -H <host_ip> >> ~/.ssh/known_hosts (adds host as checked)
+ ssh-copy-id root@<host_ip> (copies over default public key to host .ssh/authorized_keys file)
