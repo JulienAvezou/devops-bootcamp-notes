@@ -38,3 +38,5 @@ host key checking is enabled by default on ansible -> if dealing with ephemeral 
 for long term servers, not good practice to disable host key checking, so best to just do ssh setup once manually, following cmd can help:
  ssh-keyscan -H <host_ip> >> ~/.ssh/known_hosts (adds host as checked)
  ssh-copy-id root@<host_ip> (copies over default public key to host .ssh/authorized_keys file)
+ 
+Ansible modules normally return data which can be registered into a variable
