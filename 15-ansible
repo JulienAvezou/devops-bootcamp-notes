@@ -40,3 +40,7 @@ for long term servers, not good practice to disable host key checking, so best t
  ssh-copy-id root@<host_ip> (copies over default public key to host .ssh/authorized_keys file)
  
 Ansible modules normally return data which can be registered into a variable
+Vars can be set:
+ - directly inside each play with vars attribute
+ - via the CLI with -e flag
+ - from an external vars file using the vars_files attribute in each play that wants to access the vars
