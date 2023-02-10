@@ -33,6 +33,7 @@ ad-hoc cmd:
   ansible <HOST_GROUP || HOST> -i hosts -m <MODULE>
   ansible-playbook -i <HOSTS_FILE> <PLAYBOOK_YAML_FILE>
   ansible-galaxy collection install <COLLECTION_NAME>
+  -vv (flag to display info about ansible config)
 
 host key checking is enabled by default on ansible -> if dealing with ephemeral servers, can be practical to disable host key checking via ansible config file
 for long term servers, not good practice to disable host key checking, so best to just do ssh setup once manually, following cmd can help:
@@ -44,3 +45,8 @@ Vars can be set:
  - directly inside each play with vars attribute
  - via the CLI with -e flag
  - from an external vars file using the vars_files attribute in each play that wants to access the vars
+ 
+ Best practice to use fully qualified names for ansible modules
+  eg: community.docker.docker_image
+  
+Using terraform provisioner or null_resource provider you can automate tf provisioning & ansible configuration  
