@@ -50,6 +50,8 @@ Vars can be set:
  Best practice to use fully qualified names for ansible modules
   eg: community.docker.docker_image
   
+Best practice to create dedicated server to run ansible on
+  
 Using terraform provisioner or null_resource provider you can automate tf provisioning & ansible configuration  
 
 Can configure dynamic inventory list using inventory plugins (recommended) or scripts
