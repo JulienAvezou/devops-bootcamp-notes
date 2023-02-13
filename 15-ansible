@@ -59,3 +59,5 @@ Can configure dynamic inventory list using inventory plugins (recommended) or sc
  - plugin file name needs to end with name of the plugin 
  - enable public DNS names so ansible can connect to servers from outside VPC
  - can filter inventory & group inventory based on keys (eg. tags or instance types)
+ 
+Roles in ansible = packages for tasks that can easily be reused and maintained
