@@ -34,6 +34,7 @@ ad-hoc cmd:
   ansible-playbook -i <HOSTS_FILE> <PLAYBOOK_YAML_FILE>
   ansible-galaxy collection install <COLLECTION_NAME>
   -vv (flag to display info about ansible config)
+  ansible-inventory -i <INVENTORY_FILE> --list (or --graph)
 
 host key checking is enabled by default on ansible -> if dealing with ephemeral servers, can be practical to disable host key checking via ansible config file
 for long term servers, not good practice to disable host key checking, so best to just do ssh setup once manually, following cmd can help:
@@ -50,3 +51,9 @@ Vars can be set:
   eg: community.docker.docker_image
   
 Using terraform provisioner or null_resource provider you can automate tf provisioning & ansible configuration  
+
+Can configure dynamic inventory list using inventory plugins (recommended) or scripts
+ - plugin needs to be enabled in ansible.cfg file
+ - plugin file name needs to end with name of the plugin 
+ - enable public DNS names so ansible can connect to servers from outside VPC
+ - can filter inventory & group inventory based on keys (eg. tags or instance types)
