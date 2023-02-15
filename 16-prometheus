@@ -1,0 +1,27 @@
+# Prometheus
+
+Monitoring tool for dynamic container environments 
+ 
+Components:
+   1. Prometheus server
+    - Data Retrieval Worker to pull metrics data
+    - Storage via time series db
+    - HTTP Server to accept PromQL queries from Prometheus Web UI or Grafana
+    
+Metrics defined by help (description) & type (counter, gauge, histogram) entries gathered from targets (own application for eg)
+
+Targets need to expose /metrics endpoints with correct format to Prometheus
+For target that don't have exporter by default, can use Exporter. Prometheus has list of Exporters for different targets
+
+Prometheus is pull system - advantages:
+  - multiple Prometheus instances can pull letrics data
+  - no risk of monitoring becoming bottleneck like push systems
+  - better detection/insight
+However, disadvantage is difficulty to scale so important to limit number of metrics (can also use Prometheus Federation that allows a Prometheus server to scrape other Prometheus servers)
+
+Can define rules for aggregating metric values or creating alerts when condition met, defined within prometheus.yaml file
+
+Prometheus has component Alertmanager which fires alert when condition is met
+    
+Monitoring of K8s Cluster Node Resources out of the box    
+   
