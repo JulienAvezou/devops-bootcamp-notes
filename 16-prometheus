@@ -24,4 +24,23 @@ Can define rules for aggregating metric values or creating alerts when condition
 Prometheus has component Alertmanager which fires alert when condition is met
     
 Monitoring of K8s Cluster Node Resources out of the box    
-   
+
+Optimal way to deploy prometheus in K8s -> use Helm chart to deploy operator 
+
+Can adjust Prometheus config -> which endpoints to scrape
+Can also adjust alert rules 
+Config Alertmanager to send notification in case of alert triggered from set rules
+
+Visibility of monitoring data -> Prometheus UI
+ In Prometheus, instance = endpoint that can be scraped
+ job = collection of instances w same purpose
+ 
+For data visualisation -> Grafana UI
+ data structure - folders > dashboards > rows > panels
+
+Alert rules run on expressions in PromQL, each expression is based on metrics and filters within Prometheus functions 
+
+Prometheus operator allows use of CRD (custom resource definitions) inside K8s - can use kind: PrometheusRule for deploying new rules, AlertmanagerConfig for alert manager rules
+
+
+
