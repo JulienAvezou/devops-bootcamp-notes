@@ -42,5 +42,8 @@ Alert rules run on expressions in PromQL, each expression is based on metrics an
 
 Prometheus operator allows use of CRD (custom resource definitions) inside K8s - can use kind: PrometheusRule for deploying new rules, AlertmanagerConfig for alert manager rules
 
+To monitor own application -> choose Prometheus client library (needs to match lang in which your app is written)
+
+
 
 
